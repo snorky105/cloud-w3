@@ -1,0 +1,179 @@
+/* Corpo della pagina */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Titolo */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Stile dell'input di ricerca */
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #007bff;  /* Colore blu quando l'input è selezionato */
+    outline: none;
+}
+
+/* Stile per la tabella */
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 16px; /* Bordo arrotondato */
+    overflow: hidden; /* Per evitare che gli angoli arrotondati siano nascosti */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Intestazioni della tabella */
+th {
+    background-color: #3498db; /* Colore blu moderno */
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase; /* Testo maiuscolo */
+}
+
+/* Celle della tabella */
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 1.1em;
+}
+
+/* Effetto hover per le righe della tabella */
+tr:hover {
+    background-color: #ecf0f1; /* Colore leggero quando si passa sopra una riga */
+    transition: background-color 0.3s ease;
+}
+
+/* Stile per le righe dispari */
+tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Righe dispari con un colore diverso */
+}
+
+/* Righe pari */
+tr:nth-child(even) {
+    background-color: #ffffff; /* Righe pari bianche */
+}
+
+/* Centra i dati nella prima colonna (ID Soggetto) */
+td:first-child {
+    text-align: center;
+}
+td:nth-child(2) {
+    text-align: center;
+}
+
+td:nth-child(4) {
+    text-align: left;
+}
+/* Messaggio "Nessun dato trovato" */
+td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    color: #95a5a6;
+    font-size: 1.2em;
+}
+
+/* Stile per il checkbox tondo */
+.userCheckbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    appearance: none;
+    border: 2px solid #007bff;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.userCheckbox:checked {
+    background-color: #007bff;  /* Colore blu quando selezionato */
+    border-color: #007bff;      /* Colore del bordo quando selezionato */
+}
+
+/* Contenitore del link da copiare */
+#copyLinkContainer {
+    display: none;
+    text-align: center;
+    margin: 20px;
+}
+
+#linkToCopy {
+    padding: 10px;
+    border: 2px solid #007bff;       /* bordo blu */
+    border-radius: 5px;              /* angoli arrotondati */
+    font-size: 16px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    margin: 10px auto;              /* centrato orizzontalmente */
+    display: block;                 /* per poter usare margin auto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* leggera ombra */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#linkToCopy:focus {
+    outline: none;
+    border-color: #0056b3;          /* colore più scuro al focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+/* Renderizzare la tabella in modo responsivo */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+}
