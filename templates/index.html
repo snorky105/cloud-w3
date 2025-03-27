@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco gestori Tinnvision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>ELENCO GESTORI TINN VISION INTEGRA</h1>
+    <p>Filtra:</p>
+    
+    <!-- Campo di ricerca senza bottone -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input type="text" id="searchInput" placeholder="Cerca..." oninput="filterTable()">
+    </div>
+
+     <!-- Link da copiare -->
+     <div id="copyLinkContainer" style="display:none;">
+        <!-- <button onclick="copyLink()">Copia il link</button> -->
+        <input type="text" id="linkToCopy" readonly>
+    </div>
+
+    
+    <table border="1">
+        <thead>
+        <tr>
+            <th>SELEZIONA</th> <!-- Intestazione della colonna checkbox -->
+            <th>GESTORE</th>
+            <th>ENTE</th>
+            <th>NOME LOGIN</th>
+        </tr>
+        </thead>
+        <tbody id="userTable">
+        {% for utente in utenti %}
+        <tr>
+            <td><input type="checkbox" class="userCheckbox" data-id="{{ utente[0] }}" data-gestore="{{ utente[0] }}"></td> <!-- Checkbox con data-id e data-gestore -->
+            <td>{{ utente[0] }}</td>
+            <td>{{ utente[1] }}</td>
+            <td>{{ utente[2] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='cerca.js') }}"></script>
+    <script src="{{ url_for('static', filename='copialink.js') }}"></script>
+    <script src="{{ url_for('static', filename='handlecheckbox.js') }}"></script>
+    
+</body>
+</html>
